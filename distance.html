@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distance Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+<head>
+    <title>Distance Calculator</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color:#f2f2f2;
+            text-align:center;
+            margin-top:60px;
+        }
+
+        .container{
+            width:350px;
+            margin:auto;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0px 0px 10px gray;
+        }
+
+        input{
+            width:90%;
+            padding:10px;
+            margin:10px;
+        }
+
+        button{
+            padding:10px 20px;
+            background:#4CAF50;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#45a049;
+        }
+
+        #result{
+            margin-top:20px;
+            font-size:20px;
+            font-weight:bold;
+            color:blue;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Distance Calculator</h2>
+
+    <p><b>Distance = √(x² + y²)</b></p>
+
+    <input type="number" id="x" placeholder="Enter X value"><br>
+
+    <input type="number" id="y" placeholder="Enter Y value"><br>
+
+    <button onclick="calculateDistance()">Calculate</button>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+
+function calculateDistance(){
+
+    let x = parseFloat(document.getElementById("x").value);
+    let y = parseFloat(document.getElementById("y").value);
+
+    if(isNaN(x) || isNaN(y)){
+        document.getElementById("result").innerHTML = "Please enter both values.";
+        return;
+    }
+
+    let distance = Math.sqrt((x*x) + (y*y));
+
+    document.getElementById("result").innerHTML =
+    "Distance = " + distance.toFixed(2);
+
+}
+
+</script>
+
+</script>
+<button onclick="window.location.href='index.html'">
+    Back
+</button>
+
+</body>
+
+</html>

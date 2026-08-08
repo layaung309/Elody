@@ -1,0 +1,134 @@
+/* =========================
+   NAVY MINIMALIST RESUME
+   ========================= */
+
+:root {
+    --navy: #0b1f3a;
+    --navy-light: #183b63;
+    --text: #263238;
+    --muted: #667085;
+    --border: #d9e0e8;
+    --background: #f8fafc;
+    --white: #ffffff;
+}
+
+/* Main content */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+    margin: 0;
+    padding: 40px;
+}
+
+/* Headings */
+h3 {
+    color: var(--navy);
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 5px;
+    letter-spacing: 0.2px;
+}
+
+/* Paragraphs */
+p {
+    color: var(--muted);
+    font-size: 15px;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+/* Research title */
+em {
+    color: var(--navy-light);
+    font-style: italic;
+}
+
+/* Lists */
+ul {
+    padding-left: 22px;
+    margin-top: 8px;
+    margin-bottom: 25px;
+}
+
+li {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 8px;
+    padding-left: 5px;
+}
+
+li::marker {
+    color: var(--navy);
+}
+
+/* Section divider */
+hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 40px 0 25px;
+}
+
+/* Previous Files heading */
+hr + h3 {
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+/* Buttons */
+button {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+
+    background: var(--navy);
+    color: var(--white);
+
+    border: 1px solid var(--navy);
+    border-radius: 6px;
+
+    padding: 12px 18px;
+    margin: 10px 0;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* Button hover */
+button:hover {
+    background: var(--white);
+    color: var(--navy);
+    border-color: var(--navy);
+    transform: translateX(4px);
+}
+
+/* Button click */
+button:active {
+    transform: translateX(2px);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    body {
+        padding: 25px 18px;
+    }
+
+    h3 {
+        font-size: 17px;
+    }
+
+    p,
+    li {
+        font-size: 14px;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}
