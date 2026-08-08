@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai Change Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>💰 Thai Change Calculator</h2>
+
+    <p class="subtitle">
+        Enter an amount in Thai Baht to calculate the minimum number of banknotes and coins.
+    </p>
+
+    <input
+        type="number"
+        id="money"
+        placeholder="Enter amount (e.g. 3789)"
+        min="0">
+
+    <button onclick="calculate()">
+        Calculate Change
+    </button>
+
+    <div id="result">
+
+        <div class="row">
+            <span>1000 Baht</span>
+            <strong id="b1000">0</strong>
+        </div>
+
+        <div class="row">
+            <span>500 Baht</span>
+            <strong id="b500">0</strong>
+        </div>
+
+        <div class="row">
+            <span>100 Baht</span>
+            <strong id="b100">0</strong>
+        </div>
+
+        <div class="row">
+            <span>50 Baht</span>
+            <strong id="b50">0</strong>
+        </div>
+
+        <div class="row">
+            <span>20 Baht</span>
+            <strong id="b20">0</strong>
+        </div>
+
+        <div class="row">
+            <span>10 Baht</span>
+            <strong id="c10">0</strong>
+        </div>
+
+        <div class="row">
+            <span>5 Baht</span>
+            <strong id="c5">0</strong>
+        </div>
+
+        <div class="row">
+            <span>2 Baht</span>
+            <strong id="c2">0</strong>
+        </div>
+
+        <div class="row">
+            <span>1 Baht</span>
+            <strong id="c1">0</strong>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function calculate(){
+
+    let amount = parseInt(document.getElementById("money").value);
+
+    if(isNaN(amount) || amount < 0){
+
+        alert("Please enter a valid amount.");
+        return;
+    }
+
+    let note1000 = Math.floor(amount / 1000);
+    amount %= 1000;
+
+    let note500 = Math.floor(amount / 500);
+    amount %= 500;
+
+    let note100 = Math.floor(amount / 100);
+    amount %= 100;
+
+    let note50 = Math.floor(amount / 50);
+    amount %= 50;
+
+    let note20 = Math.floor(amount / 20);
+    amount %= 20;
+
+    let coin10 = Math.floor(amount / 10);
+    amount %= 10;
+
+    let coin5 = Math.floor(amount / 5);
+    amount %= 5;
+
+    let coin2 = Math.floor(amount / 2);
+    amount %= 2;
+
+    let coin1 = amount;
+
+    document.getElementById("b1000").innerHTML = note1000;
+    document.getElementById("b500").innerHTML = note500;
+    document.getElementById("b100").innerHTML = note100;
+    document.getElementById("b50").innerHTML = note50;
+    document.getElementById("b20").innerHTML = note20;
+    document.getElementById("c10").innerHTML = coin10;
+    document.getElementById("c5").innerHTML = coin5;
+    document.getElementById("c2").innerHTML = coin2;
+    document.getElementById("c1").innerHTML = coin1;
+
+}
+
+</script>
+
+</script>
+<button onclick="window.location.href='index.html'">
+    Back
+</button>
+
+</body>
+</html>
